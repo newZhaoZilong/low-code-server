@@ -5,11 +5,12 @@ import { ConfigService } from '@nestjs/config';
 
 
 @Controller({
-  path:'user'
+  path: 'user',
+  version: VERSION_NEUTRAL
 })
 export class AppController {
   constructor(private readonly appService: AppService,
-    private readonly configService:ConfigService) { }
+    private readonly configService: ConfigService) { }
 
   @Get()
   @Version([VERSION_NEUTRAL, '1'])
@@ -38,7 +39,7 @@ export class AppController {
   }
 
   @Get('getTestName')
-  getTestName(){
+  getTestName() {
     return this.configService.get('TEST_VALUE').name;
   }
 }

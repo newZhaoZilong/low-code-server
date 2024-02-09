@@ -4,6 +4,7 @@ import { VERSION_NEUTRAL, VersioningType } from '@nestjs/common';
 import { TransformInterceptor } from './common/interceptors/transform.interceptor';
 import { AllExceptionsFilter } from './common/exceptions/base.exception.filter';
 import { HttpExceptionFilter } from './common/exceptions/http.exception.filter';
+import { generateDocument } from './doc';
 
 
 async function bootstrap() {
@@ -14,6 +15,9 @@ async function bootstrap() {
     defaultVersion: [VERSION_NEUTRAL, '1', '2'],
     type: VersioningType.URI,
   });
+
+  //创建文档
+  generateDocument(app);
 
   //接口拦截器
   app.useGlobalInterceptors(new TransformInterceptor());
