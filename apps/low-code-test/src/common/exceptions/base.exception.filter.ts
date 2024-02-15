@@ -12,7 +12,7 @@ export class AllExceptionsFilter implements ExceptionFilter {
         const ctx = host.switchToHttp();
         const response = ctx.getResponse();
         const request = ctx.getRequest();
-        // console.log('base1');
+        console.log('base1',exception);
 
         // 非 HTTP 标准异常的处理。
         response.status(HttpStatus.SERVICE_UNAVAILABLE).json({

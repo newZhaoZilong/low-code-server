@@ -3,14 +3,16 @@ import { Module } from '@nestjs/common';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { getConfig } from '@app/common/utils'
-import { UserModule } from './user/user.module';
+import { SiteModule } from './site/site.module';
+import { PageModule } from './page/page.module';
+import { DatabaseModule } from '@app/common/database/database.module';
 
 @Module({
-  imports: [ConfigModule.forRoot({
+  imports: [DatabaseModule, ConfigModule.forRoot({
     ignoreEnvFile: true,
     isGlobal: true,
     load: [getConfig]
-  }),UserModule],
+  }), SiteModule, PageModule],
   controllers: [],
   providers: [AppService],
 })

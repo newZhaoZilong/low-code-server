@@ -29,6 +29,9 @@ importers:
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
+      mongodb:
+        specifier: ^6.3.0
+        version: 6.3.0
       mongoose:
         specifier: ^8.1.1
         version: 8.1.1
@@ -46,7 +49,7 @@ importers:
         version: 1.12.2
       typeorm:
         specifier: ^0.3.20
-        version: 0.3.20(mysql2@3.9.1)(ts-node@10.9.2)
+        version: 0.3.20(mongodb@6.3.0)(mysql2@3.9.1)(ts-node@10.9.2)
       yaml:
         specifier: ^2.3.4
         version: 2.3.4
@@ -118,6 +121,8 @@ importers:
   apps/devops: {}
 
   apps/low-code-test: {}
+
+  apps/user: {}
 
 packages:
 
@@ -5365,7 +5370,7 @@ packages:
   /typedarray@0.0.6:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
 
-  /typeorm@0.3.20(mysql2@3.9.1)(ts-node@10.9.2):
+  /typeorm@0.3.20(mongodb@6.3.0)(mysql2@3.9.1)(ts-node@10.9.2):
     resolution: {integrity: sha512-sJ0T08dV5eoZroaq9uPKBoNcGslHBR4E4y+EBHs//SiGbblGe7IeduP/IH4ddCcj0qp3PHwDwGnuvqEAnKlq/Q==}
     engines: {node: '>=16.13.0'}
     hasBin: true
@@ -5433,6 +5438,7 @@ packages:
       dotenv: 16.4.1
       glob: 10.3.10
       mkdirp: 2.1.6
+      mongodb: 6.3.0
       mysql2: 3.9.1
       reflect-metadata: 0.2.1
       sha.js: 2.4.11
